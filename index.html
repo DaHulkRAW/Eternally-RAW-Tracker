@@ -144,21 +144,21 @@
           <span class="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-1.5">
             <i class="fa-solid fa-clock text-brand-orange"></i> Shift &amp; Schedule Mode
           </span>
-          <span id="shift-tip-badge" class="text-[11px] text-brand-orange font-medium">Front-load protein before 2 PM rush</span>
+          <span id="shift-tip-badge" class="text-[11px] text-brand-orange font-medium">Front-load protein before afternoon rush</span>
         </div>
         <div class="grid grid-cols-3 gap-2">
           <button onclick="setShiftMode('workday')" id="shift-btn-workday" class="shift-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center">
-            8AM–4PM Shift
+            Workday Shift
           </button>
           <button onclick="setShiftMode('popup')" id="shift-btn-popup" class="shift-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center">
-            Pop-Up / Event
+            Event / Busy Day
           </button>
           <button onclick="setShiftMode('rest')" id="shift-btn-rest" class="shift-btn py-2 px-2 rounded-xl text-xs font-bold border transition text-center">
             Rest / Travel
           </button>
         </div>
         <p id="shift-tip-text" class="text-xs text-zinc-300 mt-2.5 bg-zinc-900/80 p-2.5 rounded-xl border border-zinc-800/80">
-          Keep a Barebells or Fairlife shake ready for mid-shift so you don't hit convenience snacks hungry.
+          Keep a high-protein bar or shake ready mid-shift so you don't hit convenience snacks hungry.
         </p>
       </div>
 
@@ -357,7 +357,7 @@
           <form id="custom-meal-form" onsubmit="handleCustomMealSubmit(event)" class="space-y-3">
             <div>
               <label class="block text-[11px] font-bold uppercase text-zinc-400 mb-1">Meal / Food Name</label>
-              <input type="text" id="meal-name" required placeholder="e.g., Perdue Drumsticks + Salsa" class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-brand-orange" />
+              <input type="text" id="meal-name" required placeholder="e.g., Grilled Chicken & Salsa Bowl" class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-brand-orange" />
             </div>
 
             <div class="grid grid-cols-2 gap-2.5">
@@ -485,7 +485,7 @@
           <div class="bg-brand-card border border-brand-border rounded-2xl p-4 space-y-3">
             <h3 class="font-display text-base uppercase text-white">Log Completed Session</h3>
             <form onsubmit="handleWorkoutLog(event)" class="space-y-2.5">
-              <input type="text" id="workout-log-name" required placeholder="e.g., 1v1 Basketball vs Brother" class="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-orange" />
+              <input type="text" id="workout-log-name" required placeholder="e.g., Pickup Basketball & Conditioning" class="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-orange" />
               <div class="grid grid-cols-2 gap-2">
                 <input type="number" id="workout-log-mins" required min="5" placeholder="Duration (mins)" class="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-orange" />
                 <input type="number" id="workout-log-cals" required min="10" placeholder="Est. Burn (kcal)" class="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-orange" />
@@ -523,7 +523,7 @@
             <h2 class="font-display text-lg uppercase text-white flex items-center gap-2">
               <i class="fa-solid fa-fire text-brand-orange"></i> Morning Mindset Lock-In
             </h2>
-            <p class="text-xs text-zinc-400">Set your intention before starting your shift</p>
+            <p class="text-xs text-zinc-400">Set your intention before starting your day</p>
           </div>
           <span id="mindset-saved-badge" class="hidden text-[11px] font-bold text-brand-emerald">Locked In!</span>
         </div>
@@ -577,26 +577,26 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
             <h2 class="font-display text-lg uppercase text-white">Recomp Roadmap &amp; Target Dates</h2>
-            <p id="roadmap-subtitle" class="text-xs text-zinc-400">Baseline: 236 lbs &rarr; Current: 218.5 lbs &rarr; Goal: 190 lbs</p>
+            <p id="roadmap-subtitle" class="text-xs text-zinc-400">Baseline: 200 lbs &rarr; Current: 200 lbs &rarr; Goal: 185 lbs</p>
           </div>
           <button onclick="toggleGoalsEditor()" class="px-3 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold border border-zinc-700 self-start sm:self-auto">
             <i class="fa-solid fa-sliders text-brand-orange mr-1"></i> Personalize Goals &amp; Body
           </button>
         </div>
 
-        <!-- Visual Recomp Progress Bar (236 -> 190) -->
+        <!-- Visual Recomp Progress Bar -->
         <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 space-y-2">
           <div class="flex justify-between items-baseline text-xs">
             <span class="font-bold text-zinc-300">Total Journey Progress</span>
-            <span id="journey-pct-text" class="font-bold text-brand-emerald">17.5 lbs down (38% to 190 lb goal)</span>
+            <span id="journey-pct-text" class="font-bold text-brand-emerald">0.0 lbs down (0% to 185 lb goal)</span>
           </div>
           <div class="h-3.5 w-full bg-zinc-950 rounded-full overflow-hidden border border-zinc-800">
-            <div id="journey-bar" class="progress-fill h-full bg-gradient-to-r from-brand-orange to-brand-emerald rounded-full" style="width: 38%"></div>
+            <div id="journey-bar" class="progress-fill h-full bg-gradient-to-r from-brand-orange to-brand-emerald rounded-full" style="width: 0%"></div>
           </div>
           <div class="flex justify-between text-[11px] text-zinc-500 font-medium">
-            <span id="journey-start-label">Start: 236 lbs</span>
-            <span id="journey-curr-label" class="text-white font-bold">Now: 218.5 lbs</span>
-            <span id="journey-goal-label">Target: 190 lbs</span>
+            <span id="journey-start-label">Start: 200 lbs</span>
+            <span id="journey-curr-label" class="text-white font-bold">Now: 200 lbs</span>
+            <span id="journey-goal-label">Target: 185 lbs</span>
           </div>
         </div>
 
@@ -645,7 +645,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             <div>
               <label class="block text-[10px] font-bold uppercase text-zinc-400 mb-1">Height / Frame Note</label>
-              <input type="text" id="prof-height" placeholder="5'9.5&quot; Muscular Build" class="w-full px-3 py-2 rounded-lg bg-zinc-950 border border-zinc-800 text-xs text-white" />
+              <input type="text" id="prof-height" placeholder="e.g., 5'10&quot; Athletic Frame" class="w-full px-3 py-2 rounded-lg bg-zinc-950 border border-zinc-800 text-xs text-white" />
             </div>
             <div>
               <label class="block text-[10px] font-bold uppercase text-zinc-400 mb-1">Sweet Treat Reward Item</label>
@@ -664,18 +664,18 @@
         <div class="lg:col-span-5 bg-brand-card border border-brand-border rounded-2xl p-4 space-y-3">
           <h3 class="font-display text-base uppercase text-white">Daily Weigh-In &amp; 7-Day Trend</h3>
           <form onsubmit="handleLogWeight(event)" class="flex gap-2">
-            <input type="number" step="0.1" id="weigh-in-input" required placeholder="Today's lbs (e.g. 218.2)" class="flex-1 px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-white focus:outline-none focus:border-brand-orange" />
+            <input type="number" step="0.1" id="weigh-in-input" required placeholder="Today's lbs (e.g. 198.4)" class="flex-1 px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-white focus:outline-none focus:border-brand-orange" />
             <button type="submit" class="px-4 py-2.5 rounded-xl bg-brand-orange hover:bg-brand-orangeDark text-white font-bold text-xs uppercase active:scale-95 transition">Log</button>
           </form>
 
           <div class="grid grid-cols-2 gap-2.5">
             <div class="p-3 rounded-xl bg-zinc-900 border border-zinc-800">
               <p class="text-[10px] uppercase font-bold text-zinc-400">Latest Weigh-In</p>
-              <p id="latest-weight-stat" class="font-display text-2xl font-bold text-white mt-0.5">218.5 lbs</p>
+              <p id="latest-weight-stat" class="font-display text-2xl font-bold text-white mt-0.5">200.0 lbs</p>
             </div>
             <div class="p-3 rounded-xl bg-zinc-900 border border-zinc-800">
               <p class="text-[10px] uppercase font-bold text-zinc-400">7-Day Rolling Avg</p>
-              <p id="rolling-avg-stat" class="font-display text-2xl font-bold text-brand-emerald mt-0.5">219.1 lbs</p>
+              <p id="rolling-avg-stat" class="font-display text-2xl font-bold text-brand-emerald mt-0.5">200.0 lbs</p>
             </div>
           </div>
 
@@ -711,7 +711,7 @@
 
         <!-- Optional Note Input for Photo/Video Check-in -->
         <div class="flex flex-col sm:flex-row gap-2">
-          <input type="text" id="progress-note-input" placeholder="Add check-in note (e.g., Waist feeling tighter, shoulders popping at 218.5 lbs)..." class="flex-1 px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white" />
+          <input type="text" id="progress-note-input" placeholder="Add check-in note (e.g., Week 2 check-in, energy steady)..." class="flex-1 px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white" />
           <button onclick="addTextVideoCheckin()" class="px-3.5 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-bold border border-zinc-700 shrink-0">
             + Log Video/Check-In Note
           </button>
@@ -784,7 +784,7 @@
       { text: "Shoot for the moon. Even if you miss, you'll land among the stars.", author: "Les Brown" },
       { text: "Discipline equals freedom. Stick to the macros when nobody is watching.", author: "Jocko Willink" },
       { text: "Callous your mind. Every rep and every clean meal builds the armor.", author: "David Goggins" },
-      { text: "Fall in love with the process, and the 190 lb outcome will take care of itself.", author: "Inky Johnson" }
+      { text: "Fall in love with the process, and the outcome will take care of itself.", author: "Inky Johnson" }
     ];
 
     // Pre-Loaded Staples Library
@@ -831,13 +831,13 @@
       },
       {
         id: 'w3',
-        title: 'Competitive 1v1 Basketball / Hoop Session',
+        title: 'Competitive Basketball / Hoop Session',
         badge: 'High-Burn Conditioning',
         burn: '~450–600 kcal',
         rounds: '45–60 Mins Full/Half-Court',
         exercises: [
           '10-Min Dynamic Warmup & Lateral Defensive Slides',
-          '1v1 Half-Court Games (Focus on explosive first step & rebounding)',
+          'Half-Court or Full-Court Games (Focus on explosive first step & rebounding)',
           '15-Min Game-Speed Shooting & Conditioning Sprints',
           'Post-Game: 16–20 oz Water + 42g Protein Recovery'
         ]
@@ -928,12 +928,12 @@
     // Shift Mode Tips
     const SHIFT_MODES = {
       workday: {
-        badge: 'Front-load protein before 2 PM rush',
-        text: 'Keep a Barebells or Fairlife shake ready mid-shift, use fork-only dining at lunch, and lock in your final water before 7:30 PM.'
+        badge: 'Front-load protein before afternoon rush',
+        text: 'Keep a high-protein bar or shake ready mid-shift, use fork-only dining at lunch, and lock in your final water before 7:30 PM.'
       },
       popup: {
-        badge: 'Event / Catering Damage Control',
-        text: 'Eat a 40g+ protein anchor BEFORE the event starts. Stick to fork-only tasting, blot any grease, and skip liquid calories.'
+        badge: 'Event / Busy Day Damage Control',
+        text: 'Eat a 40g+ protein anchor BEFORE busy hours start. Stick to fork-only tasting, blot any grease, and skip liquid calories.'
       },
       rest: {
         badge: 'Recovery & Sleep Optimization',
@@ -947,16 +947,16 @@
       return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
     }
 
-    // Default Application State
+    // Default Application State (Clean neutral defaults for new users)
     function getDefaultState() {
       const today = getTodayKey();
       return {
         profile: {
-          startWeight: 236.0,
-          currentWeight: 218.5,
-          goalWeight: 190.0,
-          weeklyPace: 1.25,
-          heightNote: '5\'9.5" Muscular Build',
+          startWeight: 200.0,
+          currentWeight: 200.0,
+          goalWeight: 185.0,
+          weeklyPace: 1.0,
+          heightNote: '',
           calories: 2100,
           protein: 180,
           fat: 65,
@@ -980,12 +980,7 @@
         completedExercises: {},
         workoutLogs: [],
         motivationVideos: DEFAULT_VIDEOS,
-        weightHistory: [
-          { date: '2026-11-13', weight: 220.2 },
-          { date: '2026-11-15', weight: 219.6 },
-          { date: '2026-11-17', weight: 219.0 },
-          { date: '2026-11-18', weight: 218.5 }
-        ],
+        weightHistory: [],
         progressEntries: []
       };
     }
@@ -1003,7 +998,6 @@
         if (!raw) return getDefaultState();
         const parsed = JSON.parse(raw);
         const def = getDefaultState();
-        // Merge safely so new fields exist
         return {
           ...def,
           ...parsed,
@@ -1103,7 +1097,7 @@
     function updateHydrationCutoffClock() {
       const now = new Date();
       const cutoff = new Date(now);
-      cutoff.setHours(19, 30, 0, 0); // 7:30 PM
+      cutoff.setHours(19, 30, 0, 0);
 
       const pill = document.getElementById('hydration-pill');
       const text = document.getElementById('hydration-cutoff-text');
@@ -1203,13 +1197,11 @@
       const log = ensureTodayLog();
       const prof = state.profile;
 
-      // Date header
       const dateObj = new Date();
       document.getElementById('header-date-label').textContent = dateObj.toLocaleDateString('en-US', {
         weekday: 'short', month: 'short', day: 'numeric'
       }) + ` • ${prof.currentWeight} lbs`;
 
-      // Sum Macros
       const totals = log.meals.reduce((acc, m) => {
         acc.cal += Number(m.cal) || 0;
         acc.pro += Number(m.pro) || 0;
@@ -1223,7 +1215,6 @@
       const fatRem = prof.fat - totals.fat;
       const carbRem = prof.carbs - totals.carb;
 
-      // Update Calories Bar
       const calPct = Math.min(100, Math.round((totals.cal / prof.calories) * 100));
       const calBar = document.getElementById('cal-bar');
       calBar.style.width = `${calPct}%`;
@@ -1233,7 +1224,6 @@
           ? `<span class="text-brand-emerald">(${Math.round(calRem)} left)</span>`
           : `<span class="text-rose-400">(${Math.abs(Math.round(calRem))} over)</span>`);
 
-      // Update Protein Bar (Floor)
       const proPct = Math.min(100, Math.round((totals.pro / prof.protein) * 100));
       const proBar = document.getElementById('pro-bar');
       const hitTag = document.getElementById('protein-hit-tag');
@@ -1248,7 +1238,6 @@
         document.getElementById('pro-readout').innerHTML = `${totals.pro.toFixed(1).replace(/\.0$/, '')}g / ${prof.protein}g <span class="text-amber-400">(${proNeeded.toFixed(0)}g needed)</span>`;
       }
 
-      // Update Fat Bar
       const fatPct = Math.min(100, Math.round((totals.fat / prof.fat) * 100));
       const fatBar = document.getElementById('fat-bar');
       fatBar.style.width = `${fatPct}%`;
@@ -1258,7 +1247,6 @@
         ? `${fatRem.toFixed(1).replace(/\.0$/, '')}g cushion left`
         : `<span class="text-rose-400 font-bold">${Math.abs(fatRem).toFixed(1)}g over ceiling</span>`;
 
-      // Update Carbs Bar
       const carbPct = Math.min(100, Math.round((totals.carb / prof.carbs) * 100));
       const carbBar = document.getElementById('carb-bar');
       carbBar.style.width = `${carbPct}%`;
@@ -1268,7 +1256,6 @@
         ? `${carbRem.toFixed(1).replace(/\.0$/, '')}g cushion left`
         : `<span class="text-rose-400 font-bold">${Math.abs(carbRem).toFixed(1)}g over cap</span>`;
 
-      // Sweet Treat Reward Card
       const rewardUnlocked = totals.pro >= prof.protein && totals.cal <= prof.calories;
       const rewardCard = document.getElementById('reward-card');
       const rewardIcon = document.getElementById('reward-icon-box');
@@ -1289,7 +1276,6 @@
         rewardBadge.textContent = 'Locked';
       }
 
-      // Protocol Checkboxes & Water
       document.getElementById('check-fork').checked = !!log.forkOnly;
       document.getElementById('check-blot').checked = !!log.greaseBlotted;
       const waterGoal = prof.waterGoalOz || 100;
@@ -1301,7 +1287,6 @@
       const wPct = Math.min(100, Math.round(((log.waterOz || 0) / waterGoal) * 100));
       document.getElementById('water-bar').style.width = `${wPct}%`;
 
-      // Today's Logged Meals List
       const listEl = document.getElementById('today-meals-list');
       if (log.meals.length === 0) {
         listEl.innerHTML = `
@@ -1461,7 +1446,6 @@
     // TAB 3: WORKOUTS, TIMER & WEEKLY FREQUENCY
     // =====================================================================
     function renderWorkoutsTab() {
-      // Weekly Grid
       const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
       const grid = document.getElementById('weekly-days-grid');
       let hitCount = 0;
@@ -1483,7 +1467,6 @@
 
       document.getElementById('weekly-workout-count').textContent = `${hitCount} / 5 Days Hit`;
 
-      // Pre-Loaded Routines
       const routinesEl = document.getElementById('workout-routines-list');
       routinesEl.innerHTML = WORKOUT_ROUTINES.map(w => `
         <div class="bg-brand-card border border-brand-border rounded-2xl p-4 space-y-3">
@@ -1515,7 +1498,6 @@
         </div>
       `).join('');
 
-      // Completed Workouts History
       const compEl = document.getElementById('completed-workouts-list');
       if (state.workoutLogs.length === 0) {
         compEl.innerHTML = `<p class="text-[11px] text-zinc-500 text-center py-2">No logged sessions yet this week.</p>`;
@@ -1561,7 +1543,6 @@
         mins: 25,
         cals: numericBurn
       });
-      // Auto-check today's weekday
       const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       const todayDay = dayNames[new Date().getDay()];
       state.weeklyChecks[todayDay] = true;
@@ -1588,7 +1569,6 @@
       showToast('Workout session saved!');
     }
 
-    // Interval / Rest Countdown Timer Logic
     function updateTimerDisplay() {
       const m = Math.floor(timerSeconds / 60);
       const s = timerSeconds % 60;
@@ -1757,33 +1737,29 @@
       const pct = Math.min(100, Math.max(0, Math.round((lostSoFar / totalToLose) * 100)));
 
       document.getElementById('roadmap-subtitle').textContent =
-        `Baseline: ${p.startWeight} lbs → Current: ${p.currentWeight} lbs → Goal: ${p.goalWeight} lbs (${p.heightNote || ''})`;
+        `Baseline: ${p.startWeight} lbs → Current: ${p.currentWeight} lbs → Goal: ${p.goalWeight} lbs${p.heightNote ? ` (${p.heightNote})` : ''}`;
       document.getElementById('journey-pct-text').textContent = `${lostSoFar.toFixed(1)} lbs down (${pct}% to ${p.goalWeight} lb goal)`;
       document.getElementById('journey-bar').style.width = `${pct}%`;
       document.getElementById('journey-start-label').textContent = `Start: ${p.startWeight} lbs`;
       document.getElementById('journey-curr-label').textContent = `Now: ${p.currentWeight} lbs`;
       document.getElementById('journey-goal-label').textContent = `Target: ${p.goalWeight} lbs`;
 
-      // Dynamic Milestone Roadmap Cards
       const today = new Date();
-      const pace = Math.max(0.25, p.weeklyPace || 1.25);
+      const pace = Math.max(0.25, p.weeklyPace || 1.0);
       const lbsRemaining = Math.max(0, p.currentWeight - p.goalWeight);
       const totalDaysToGoal = (lbsRemaining / pace) * 7;
 
-      // Jan 1st Birthday projection
-      const nextJan1 = new Date(today.getFullYear() + (today.getMonth() === 0 && today.getDate() === 1 ? 0 : 1), 0, 1);
-      const weeksToBday = Math.max(0, (nextJan1 - today) / (7 * 86400000));
-      const projectedBdayWeight = Math.max(p.goalWeight, p.currentWeight - weeksToBday * pace);
-
+      const quarterWeight = +(p.currentWeight - lbsRemaining * 0.25).toFixed(1);
+      const quarterDateStr = addDaysToDate(today, totalDaysToGoal * 0.25);
       const midWeight = +(p.currentWeight - lbsRemaining * 0.5).toFixed(1);
       const midDateStr = addDaysToDate(today, totalDaysToGoal * 0.5);
       const finalDateStr = addDaysToDate(today, totalDaysToGoal);
 
       document.getElementById('milestone-cards-grid').innerHTML = `
         <div class="p-3.5 rounded-xl bg-zinc-900 border border-brand-orange/40">
-          <span class="text-[10px] font-extrabold uppercase text-brand-orange">Jan 1st 36th Birthday</span>
-          <p class="font-display text-xl font-bold text-white mt-0.5">~${projectedBdayWeight.toFixed(1)} lbs</p>
-          <p class="text-[11px] text-zinc-400 mt-0.5">Projected at ${pace} lbs/wk pace</p>
+          <span class="text-[10px] font-extrabold uppercase text-brand-orange">25% Checkpoint</span>
+          <p class="font-display text-xl font-bold text-white mt-0.5">${quarterWeight} lbs</p>
+          <p class="text-[11px] text-zinc-400 mt-0.5">Est. Target: ${quarterDateStr}</p>
         </div>
         <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800">
           <span class="text-[10px] font-extrabold uppercase text-sky-400">Halfway Checkpoint</span>
@@ -1797,7 +1773,6 @@
         </div>
       `;
 
-      // Weight History & 7-Day Rolling Average
       const sortedWeights = [...state.weightHistory].sort((a, b) => a.date.localeCompare(b.date));
       const latestWt = sortedWeights.length ? sortedWeights[sortedWeights.length - 1].weight : p.currentWeight;
       const last7 = sortedWeights.slice(-7);
@@ -1809,12 +1784,16 @@
       document.getElementById('rolling-avg-stat').textContent = `${avg7.toFixed(1)} lbs`;
 
       const whList = document.getElementById('weight-history-list');
-      whList.innerHTML = [...sortedWeights].reverse().map((w, idx) => `
-        <div class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded-lg bg-zinc-900/80 border border-zinc-800">
-          <span class="text-zinc-400">${w.date}</span>
-          <span class="font-bold text-white">${w.weight.toFixed(1)} lbs</span>
-        </div>
-      `).join('');
+      if (sortedWeights.length === 0) {
+        whList.innerHTML = `<p class="text-[11px] text-zinc-500 text-center py-2">No weigh-ins logged yet.</p>`;
+      } else {
+        whList.innerHTML = [...sortedWeights].reverse().map(w => `
+          <div class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded-lg bg-zinc-900/80 border border-zinc-800">
+            <span class="text-zinc-400">${w.date}</span>
+            <span class="font-bold text-white">${w.weight.toFixed(1)} lbs</span>
+          </div>
+        `).join('');
+      }
 
       renderWeightSVGChart(sortedWeights.slice(-12));
       renderProgressGallery();
@@ -1881,7 +1860,6 @@
       `;
     }
 
-    // Photo Compression & Progress Journal
     function handlePhotoUpload(e) {
       const file = e.target.files[0];
       if (!file) return;
